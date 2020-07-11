@@ -1,0 +1,49 @@
+<div class="content" role="main">
+  <h2>Adjectivate Someone</h2>
+  <p>
+    If you want to adjectivate someone, ask them for their link!
+  </p>
+
+  <h2>Generate Page</h2>
+  <p>
+    If you want to generate a page for people to adjectivate you, insert your
+    name and e-mail below and click on "Generate Page".
+  </p>
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Your Name</mat-label>
+    <input [(ngModel)]="name" matInput type="text" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Your E-mail</mat-label>
+    <input [(ngModel)]="email" matInput type="text" />
+  </mat-form-field>
+  <br />
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!name || !email"
+    (click)="generatePage(name, email)"
+  >
+    Generate Page
+  </button>
+
+  <div class="links" *ngIf="generatedId">
+    <p class="highlight">
+      Aaand done! Here are the links for you to share!
+    </p>
+    <p>
+      Link for people to adjectivate you:<br />
+      <a [href]="siteUrl + '/' + generatedId">
+        {{ siteUrl + '/' + generatedId }}
+      </a>
+    </p>
+    <p>
+      Link for results:<br />
+      <a [href]="siteUrl + '/results/' + generatedId">
+        {{ siteUrl + '/results/' + generatedId }}
+      </a>
+    </p>
+  </div>
+</div>

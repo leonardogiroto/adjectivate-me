@@ -1,0 +1,38 @@
+<ng-container *ngIf="pieChartData && pieChartLabels">
+  <ng-container *ngIf="pieChartData?.length > 0">
+    <p>
+      Hey, it looks like some people has adjectivated you! 😎
+      <br />
+      Check it out in the graph below!
+    </p>
+    <div style="display: block; max-width: 600px;">
+      <canvas
+        baseChart
+        legend
+        chartType="pie"
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+      ></canvas>
+    </div>
+    <br />
+    <p>
+      Go ahead and share your link and ask people to keep doing it! 😊<br />
+      <a [href]="siteUrl + '/' + userId">
+        {{ siteUrl + '/' + userId }}
+      </a>
+    </p>
+  </ng-container>
+
+  <ng-container *ngIf="pieChartData?.length === 0">
+    <p>
+      Oops, it looks like noone has adjectivated you yet 😔
+    </p>
+    <p>
+      Go ahead and share your link and ask them to do it! 😊<br />
+      <a [href]="siteUrl + '/' + userId">
+        {{ siteUrl + '/' + userId }}
+      </a>
+    </p>
+  </ng-container>
+</ng-container>

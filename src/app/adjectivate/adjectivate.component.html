@@ -1,0 +1,34 @@
+<div class="content" role="main">
+  <p>
+    Hello, this is the page to adjectivate <span>{{ user?.name }}!</span>
+    <br /><br />
+    Below, you can see a list of four adjectives.
+    <br />
+    You <span>have</span> to choose one and <span>only one</span> that you
+    believe that relates best to that person. <br /><br />
+    Once you have decided, just click on the "Save and continue" button to save
+    your decision and receive more adjectives!<br />
+    You can keep adjectivating as long as you'd like 😉!
+  </p>
+  <br />
+  <div class="adjectives">
+    <button
+      *ngFor="let adjective of adjectives"
+      mat-raised-button
+      [color]="getButtonColor(adjective)"
+      (click)="selectAdjective(adjective)"
+    >
+      {{ adjective }}
+    </button>
+  </div>
+  <br />
+  <button
+    mat-raised-button
+    class="save-btn"
+    color="primary"
+    (click)="saveAndGetAdjectives()"
+    [disabled]="!selectedAdjective"
+  >
+    Save and Continue
+  </button>
+</div>

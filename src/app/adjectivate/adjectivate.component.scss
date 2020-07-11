@@ -1,0 +1,29 @@
+.adjectives {
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 16px;
+}
+
+p span {
+  font-weight: 500;
+}
+
+button.save-btn {
+  width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .adjectives {
+    display: initial;
+
+    button {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+
+  button.save-btn {
+    width: 100%;
+  }
+}

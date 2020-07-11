@@ -1,0 +1,15 @@
+#App .mat-toolbar {
+  padding: 0px 16px;
+  cursor: pointer;
+}
+#App .mat-toolbar-row {
+  padding: 0;
+
+  &:hover {
+    color: #f3e5f5;
+  }
+}
+
+#Content {
+  padding: 16px;
+}
