@@ -23,11 +23,12 @@
   <button
     mat-raised-button
     color="primary"
-    [disabled]="!name || !email"
+    [disabled]="!name || !email || loading"
     (click)="generatePage(name, email)"
   >
     Generate Page
   </button>
+  <mat-spinner *ngIf="loading" [diameter]="20"></mat-spinner>
 
   <div class="links" *ngIf="generatedId">
     <p class="highlight">

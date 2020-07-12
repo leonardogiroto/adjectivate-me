@@ -12,6 +12,7 @@ import { User } from '../interfaces/user.interface'
 export class AdjectivateComponent implements OnInit {
   public adjectives: Array<string> = []
   public selectedAdjective: string
+  public loading = false
 
   public user: User
   private _userId: string
@@ -56,15 +57,19 @@ export class AdjectivateComponent implements OnInit {
   }
 
   private _saveAdjectives() {
+    this.loading = true
     this._appService
       .adjectivateUser(this._userId, this.selectedAdjective)
       .subscribe(
         () => {
+          this.selectedAdjective = ''
+          this.loading = false
           this._snackBar.open('Saved successfully!', '', {
             duration: 4000,
           })
         },
         () => {
+          this.loading = false
           this._snackBar.open(
             'An error has occurred, please try again',
             'Error',

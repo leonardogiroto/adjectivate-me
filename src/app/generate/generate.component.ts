@@ -12,6 +12,7 @@ export class GenerateComponent {
   public name: string
   public email: string
   public generatedId: number
+  public loading: boolean
 
   constructor(
     private _appService: AppService,
@@ -19,14 +20,17 @@ export class GenerateComponent {
   ) {}
 
   public generatePage(name: string, email: string) {
+    this.loading = true
     this._appService.generateUserPage(name, email).subscribe(
       (response) => {
         this.generatedId = response.id
+        this.loading = false
         this._snackBar.open('Page created successfully', 'Error', {
           duration: 5000,
         })
       },
       (response) => {
+        this.loading = false
         this._snackBar.open(response.error.message, 'Error', {
           duration: 5000,
         })
