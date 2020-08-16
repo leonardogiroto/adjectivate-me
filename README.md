@@ -1,27 +1,44 @@
 # AdjectivateMe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+Interface that connects to [Random Adjectives API](https://github.com/leonardogiroto/random-adjectives) and allows a profile to be created for a person and other people to adjective those person based on random adjectives.
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Published on Netlify:  
+Link: https://adjectivate-me.netlify.app/
 
-## Code scaffolding
+## Environment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 8.2.14  
+Angular Material 8.2.3  
+Typescript 3.5.3  
+Chart.js 2.9.3
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm install
+```
+
+## Running the app
+
+```
+ng serve
+```
+
+## Building the app
+
+```
+ng build
+```
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng test
+```
 
-## Running end-to-end tests
+## Future
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+i18n  
+Better UX
